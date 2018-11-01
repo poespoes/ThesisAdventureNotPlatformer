@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Interactivity : MonoBehaviour {
 
@@ -18,5 +19,10 @@ public class Interactivity : MonoBehaviour {
 	{
 		GameObject.Find("GameManager").GetComponent<GameManager>().isInteractive = !GameObject.Find("GameManager").GetComponent<GameManager>().isInteractive;
 		//GameObject.Find("GameManager").GetComponent<GameManager>().isInteractive = true;
+	}
+
+	void RestartScene()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 }

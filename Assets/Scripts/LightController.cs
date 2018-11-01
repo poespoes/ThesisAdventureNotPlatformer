@@ -12,7 +12,7 @@ public class LightController : MonoBehaviour {
     public float lerpProgress = 0;
 
     public bool readyToDecide;
-    bool isOn;
+    public bool isOn;
     private bool isInteractive;
 
     // Use this for initialization
