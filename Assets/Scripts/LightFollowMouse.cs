@@ -31,9 +31,10 @@ public class LightFollowMouse : MonoBehaviour
 		//transform.position = transform.position + new Vector3(h,v,0);
 		
 		Cursor.visible = false;
-	
-		transform.position += Camera.main.ScreenToWorldPoint(Input.mousePosition) - prevMosuePos;
-		prevMosuePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		
+		if (isOn == false)
+		{
+			transform.position += Camera.main.ScreenToWorldPoint(Input.mousePosition) - prevMosuePos;
+			prevMosuePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		}
 	}
 }
