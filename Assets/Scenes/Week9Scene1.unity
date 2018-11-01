@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1201306864}
-  boolName: AtoB
+  boolName: AtoC
   choiceMade: 0
 --- !u!61 &1098700102
 BoxCollider2D:
@@ -682,7 +682,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1300640432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4, y: -3.7, z: 0}
+  m_LocalPosition: {x: 1.4, y: -5, z: 0}
   m_LocalScale: {x: 3.2893445, y: 3.2893445, z: 3.2893445}
   m_Children: []
   m_Father: {fileID: 700129146}
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1201306864}
-  boolName: AtoC
+  boolName: AtoB
   choiceMade: 0
 --- !u!61 &1300640435
 BoxCollider2D:
