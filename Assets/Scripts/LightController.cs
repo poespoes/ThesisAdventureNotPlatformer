@@ -11,8 +11,9 @@ public class LightController : MonoBehaviour {
     public float fadeOutSpeed = 0.001f;
     public float lerpProgress = 0;
 
-    bool readyToDecide;
+    public bool readyToDecide;
     bool isOn;
+    private bool isInteractive;
 
     // Use this for initialization
     void Start () {
@@ -20,9 +21,12 @@ public class LightController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
-        if (Input.GetMouseButton(0)) {
+	    isInteractive = GameObject.Find("GameManager").GetComponent<GameManager>().isInteractive;
+
+        if (Input.GetMouseButton(0) && isInteractive==true) {
             isOn = true;
             Debug.Log("test");
         } else {
@@ -40,11 +44,14 @@ public class LightController : MonoBehaviour {
             if (lerpProgress > 0.95f) {
                 readyToDecide = true;
             }
+            
         } else {
             lerpProgress -= fadeOutSpeed;
             if (lerpProgress < 0) {
                 lerpProgress = 0;
             }
+
+            readyToDecide = false;
         }
 
         lightGlow.color = Color.Lerp(A, B, lerpProgress);

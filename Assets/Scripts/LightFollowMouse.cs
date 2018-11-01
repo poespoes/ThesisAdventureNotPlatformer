@@ -10,7 +10,9 @@ public class LightFollowMouse : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
+		
 		prevMosuePos = Camera.main.ScreenToWorldPoint( Input.mousePosition);
+		
 	}
 	
 	// Update is called once per frame
@@ -20,12 +22,12 @@ public class LightFollowMouse : MonoBehaviour
 
 		//Camera.main.ScreenPointToRay(Input.mousePosition);
 		
-		float h = horizontalSpeed * Input.GetAxisRaw("Mouse X");
-		float v = verticalSpeed * Input.GetAxisRaw("Mouse Y");
+		//float h = horizontalSpeed * Input.GetAxisRaw("Mouse X");
+		//float v = verticalSpeed * Input.GetAxisRaw("Mouse Y");
 		
-		transform.position = transform.position + new Vector3(h,v,0);
+		//transform.position = transform.position + new Vector3(h,v,0);
 		
-		/*transform.position += Camera.main.ScreenToWorldPoint(Input.mousePosition) - prevMosuePos;
-		prevMosuePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);*/
+		transform.position += Camera.main.ScreenToWorldPoint(Input.mousePosition) - prevMosuePos;
+		prevMosuePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 	}
 }

@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ChoicePoint : MonoBehaviour {
+	
+
+	public Animator anim;
+	public string boolName;
+	public bool choiceMade;
+
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		choiceMade = false;
 	}
 	
 	// Update is called once per frame
@@ -20,10 +27,17 @@ public class ChoicePoint : MonoBehaviour {
 		{
 			Debug.Log("Light is in zone;");
 
-			if (other.GetComponent<LightController>().lerpProgress == 1)
+			if (other.GetComponent<LightController>().readyToDecide==true)
 			{
-				Debug.Log("Choice is made");
+				choiceMade = true;
 			}
+		}
+
+		if (choiceMade == true)
+		{
+			Debug.Log("The choice has been made");
+			anim.SetBool(boolName,true);
+			//GameObject.Find("GameManager").GetComponent<GameManager>().isInteractive = false;
 		}
 	}
 }
